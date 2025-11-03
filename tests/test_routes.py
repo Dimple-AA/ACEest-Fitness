@@ -1,5 +1,5 @@
 import pytest
-from app import app
+from ACEest_Fitness import app  # ✅ matches your main Flask file name
 
 @pytest.fixture
 def client():
