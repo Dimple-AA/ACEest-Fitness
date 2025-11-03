@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ACEest Fitness - Register User</title>
+    <style>
+      body {
+        font-family: Arial;
+        margin: 30px;
+      }
+      input,
+      select {
+        margin: 5px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Register / Log Workout</h1>
+
+    <h3>Register New User</h3>
+    <form method="POST" action="/users">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="number" name="age" placeholder="Age" required />
+      <select name="gender">
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+      <input type="number" name="height" placeholder="Height (cm)" required />
+      <input type="number" name="weight" placeholder="Weight (kg)" required />
+      <button type="submit">Register</button>
+    </form>
+
+    <h3>Log Workout</h3>
+    <form method="POST" action="/workouts">
+      <input type="text" name="name" placeholder="User Name" required />
+      <select name="workout_type">
+        <option>Cardio</option>
+        <option>Strength</option>
+        <option>Yoga</option>
+      </select>
+      <input
+        type="number"
+        name="duration"
+        placeholder="Duration (min)"
+        required
+      />
+      <button type="submit">Log</button>
+    </form>
+  </body>
+</html>

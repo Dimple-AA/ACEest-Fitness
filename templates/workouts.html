@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ name }}'s Workouts</title>
+    <style>
+      body {
+        font-family: Arial;
+        margin: 30px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 80%;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Workouts for {{ name }}</h1>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Workout</th>
+        <th>Duration (min)</th>
+        <th>Calories</th>
+      </tr>
+      {% for w in workouts %}
+      <tr>
+        <td>{{ w[0] }}</td>
+        <td>{{ w[1] }}</td>
+        <td>{{ w[2] }}</td>
+        <td>{{ w[3] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br />
+    <a href="/">Back</a>
+  </body>
+</html>
