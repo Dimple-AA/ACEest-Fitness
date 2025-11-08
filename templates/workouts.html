@@ -1,29 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ name }}'s Workouts</title>
-    <style>
-      body {
-        font-family: Arial;
-        margin: 30px;
-      }
-      table {
-        border-collapse: collapse;
-        width: 80%;
-      }
-      th,
-      td {
-        border: 1px solid #ddd;
-        padding: 8px;
-      }
-    </style>
+    <title>Workouts for {{ name }}</title>
   </head>
   <body>
-    <h1>Workouts for {{ name }}</h1>
-    <table>
+    <h1>🏋️ Workouts for {{ name }}</h1>
+    <table border="1" cellpadding="5">
       <tr>
         <th>Date</th>
-        <th>Workout</th>
+        <th>Workout Type</th>
         <th>Duration (min)</th>
         <th>Calories</th>
       </tr>
@@ -36,7 +21,6 @@
       </tr>
       {% endfor %}
     </table>
-    <br />
-    <a href="/">Back</a>
+    <p><a href="/">Back to Home</a></p>
   </body>
 </html>
