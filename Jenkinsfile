@@ -7,7 +7,7 @@ pipeline {
         SONARQUBE_ENV = "SonarQube"    // Name configured in Manage Jenkins → System
 
         // Add SonarScanner and Java paths
-        PATH = "C:\\sonar-scanner\\bin\\windows-x86-64;${env.PATH}"
+        PATH = "C:\\sonar-scanner\\bin;${env.PATH}"
         SONAR_JAVA_PATH = "C:\\Program Files\\Java\\jdk-17.0.8\\bin\\java.exe"  // Update to your actual Java path
     }
 
@@ -46,7 +46,7 @@ pipeline {
                 echo "🔍 Running SonarQube Code Analysis..."
                 withSonarQubeEnv('SonarQube') {
                     bat """
-                        "C:\\sonar-scanner\\bin\\windows-x86-64\\SonarScanner.bat" ^
+                        C:\\sonar-scanner\\bin\\sonar-scanner ^
                         -Dsonar.projectKey=aceest-fitness ^
                         -Dsonar.projectName=aceest-fitness ^
                         -Dsonar.sources=. ^
