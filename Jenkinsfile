@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         APP_NAME = "aceest-fitness"
-        DOCKERHUB_REPO = "dimpleaa/aceest-fitness"
+        DOCKERHUB_REPO = "2024tm93009/aceest-fitness"
     }
 
     stages {
