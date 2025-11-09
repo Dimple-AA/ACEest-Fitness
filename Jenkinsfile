@@ -4,6 +4,7 @@ pipeline {
     environment {
         APP_NAME = "aceest-fitness"
         DOCKERHUB_REPO = "2024tm93009/aceest-fitness"
+        SONARQUBE_ENV = "SonarQube"    // Name configured in Manage Jenkins → System
     }
 
     stages {
@@ -33,6 +34,22 @@ pipeline {
                     call venv\\Scripts\\activate
                     pytest --maxfail=1 --disable-warnings -q
                 '''
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                echo "🔍 Running SonarQube Code Analysis..."
+                withSonarQubeEnv('SonarQube') {
+                    bat """
+                        sonar-scanner ^
+                        -Dsonar.projectKey=aceest-fitness ^
+                        -Dsonar.projectName=aceest-fitness ^
+                        -Dsonar.sources=. ^
+                        -Dsonar.python.coverage.reportPaths=coverage.xml ^
+                        -Dsonar.host.url=http://localhost:9000
+                    """
+                }
             }
         }
 
