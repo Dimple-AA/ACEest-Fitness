@@ -1,4 +1,7 @@
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from app import app, calculate_bmi, calculate_calories
+
 
 def test_home_route():
     client = app.test_client()
