@@ -46,7 +46,7 @@ pipeline {
                 echo "🔍 Running SonarQube Code Analysis..."
                 withSonarQubeEnv('SonarQube') {
                     bat """
-                        sonar-scanner ^
+                        "C:\\sonar-scanner\\bin\\windows-x86-64\\SonarScanner.bat" ^
                         -Dsonar.projectKey=aceest-fitness ^
                         -Dsonar.projectName=aceest-fitness ^
                         -Dsonar.sources=. ^
