@@ -5,6 +5,10 @@ pipeline {
         APP_NAME = "aceest-fitness"
         DOCKERHUB_REPO = "2024tm93009/aceest-fitness"
         SONARQUBE_ENV = "SonarQube"    // Name configured in Manage Jenkins → System
+
+        // Add SonarScanner and Java paths
+        PATH = "C:\\sonar-scanner\\bin\\windows-x86-64;${env.PATH}"
+        SONAR_JAVA_PATH = "C:\\Program Files\\Java\\jdk-17.0.8\\bin\\java.exe"  // Update to your actual Java path
     }
 
     stages {
@@ -21,7 +25,7 @@ pipeline {
                 bat '''
                     python -m venv venv
                     call venv\\Scripts\\activate
-                    pip install --upgrade pip
+                    python -m pip install --upgrade pip
                     pip install -r requirements.txt
                 '''
             }
